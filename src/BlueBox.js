@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const BlueBoxDom = styled.div`
   height: 50px;
   width: 100px;
-  background-color: ${(props) => props.btnColor};
+  background-color: blue;
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -12,13 +12,17 @@ const BlueBoxDom = styled.div`
   color: white;
 `;
 
-const BlueBox = (props) => {
+const BlueBox = () => {
+  const [count, setCount] = useState(0);
+
+  const counterUp = () => {
+    setCount(count + 1);
+  };
+
   return (
     <div>
-      <BlueBoxDom btnColor={props.btnColor} onClick={props.counterUp}>
-        {props.title}
-      </BlueBoxDom>
-      <span>{props.count}</span>
+      <BlueBoxDom onClick={counterUp}>버튼</BlueBoxDom>
+      <span>Counter:{count}</span>
     </div>
   );
 };
