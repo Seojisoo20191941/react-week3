@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import BlueBox from "./BlueBox";
 
 const PageOne = () => {
-  let count = 0;
-  const counterUp = () => {
-    count = count + 1;
-    console.log(count);
+  const [count, setCount] = useState(0);
+  const countUpOne = () => {
+    setCount(count + 1);
   };
+
   return (
     <>
       <div>PageOne</div>
       <BlueBox
         title="button"
-        btnColor="red"
+        btnColor="blue"
         count={count}
-        counterUp={counterUp}
+        countUp={countUpOne}
       />
     </>
   );
