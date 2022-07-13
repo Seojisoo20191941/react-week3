@@ -15,14 +15,17 @@ const BlueBoxDom = styled.div`
 const BlueBox = () => {
   const [count, setCount] = useState(0);
 
-  const counterUp = () => {
-    setCount(count + 1);
-  };
+  //   const counterUp = () => {
+  //     setCount(count + 1);
+  //   };
 
   return (
     <div>
-      <BlueBoxDom onClick={counterUp}>버튼</BlueBoxDom>
       <span>Counter:{count}</span>
+
+      <BlueBoxDom onClick={() => setCount((count) => count + 1)}>
+        버튼
+      </BlueBoxDom>
     </div>
   );
 };
