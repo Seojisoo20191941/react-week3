@@ -14,12 +14,12 @@ const BlueBoxDom = styled.div`
 
 const BlueBox = (props) => {
   return (
-    <>
+    <div>
       <BlueBoxDom btnColor={props.btnColor} onClick={props.counterUp}>
         {props.title}
       </BlueBoxDom>
       <span>{props.count}</span>
-    </>
+    </div>
   );
 };
 
